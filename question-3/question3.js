@@ -21,10 +21,9 @@ let removeLogFiles = () => {
         });
 
         // Remove the logs folder when done.
-        fs.rmdir(directory, error => {
-            if (error) throw error;
-        });
+        fs.rmSync(directory, { recursive: true, force: true });
     }
+
 }
 
 // Create log files.
